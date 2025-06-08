@@ -75,9 +75,6 @@ class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProvider
         children: _tabViews,
         controller: _tabController,),
 
-
-
-
       bottomNavigationBar:Bottomnavbar()
 
     );
