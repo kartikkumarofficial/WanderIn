@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wanderin/presentation/screens/HomesScreen.dart';
+import 'package:wanderin/presentation/widgets/bottomnavbar.dart';
 import '../widgets/place_card.dart';
 import '../widgets/search_box.dart';
 import 'AdventuresScreen.dart';
@@ -18,7 +19,7 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProviderStateMixin {
   final TextEditingController SearchController = TextEditingController();
   late TabController _tabController;
-  int _selectedIndex = 0;
+
 
   final List<Widget> _tabViews = [
     HomesScreen(),
@@ -31,11 +32,7 @@ class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProvider
     super.initState();
     _tabController=TabController(length: 3, vsync:this);
   }
-  void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex=index;
-    });
-  }
+
 
   @override
   void dispose() {
@@ -81,23 +78,8 @@ class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProvider
 
 
 
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.shifting,
-      onTap: _onItemTapped,
+      bottomNavigationBar:Bottomnavbar()
 
-
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.search,size: 35,),label: "Search"),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite_outline,size: 35,),label: "Wishlists",activeIcon: Icon(Icons.favorite)),
-        BottomNavigationBarItem(icon: Icon(Icons.tips_and_updates_outlined,size: 35,),label: "Trips"),
-        BottomNavigationBarItem(icon: Icon(Icons.message,size: 35,),label: "Messages"),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outline,size: 35,),label: "Messages",activeIcon: Icon(Icons.person,size: 35,)),
-
-
-    ],
-    ),);
+    );
   }
 }
