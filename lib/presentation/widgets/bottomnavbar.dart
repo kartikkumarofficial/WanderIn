@@ -23,7 +23,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.shifting,
+      type: BottomNavigationBarType.fixed,
       onTap: _onItemTapped,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.search,size: 35,),label: "Search"),

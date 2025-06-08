@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-Container SearchBox(double srcheight) {
+Container SearchBox(double srcheight,double srcwidth) {
   return Container(
     height: srcheight * 0.055,
 
-    // margin: EdgeInsets.symmetric(horizontal: srcwidth*0.04),
+    margin: EdgeInsets.symmetric(horizontal: srcwidth*0.04),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(30),
     ),
