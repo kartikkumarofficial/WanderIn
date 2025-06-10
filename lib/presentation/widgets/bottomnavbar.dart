@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Bottomnavbar extends StatefulWidget {
 
@@ -29,8 +31,8 @@ class _BottomnavbarState extends State<Bottomnavbar> {
         BottomNavigationBarItem(icon: Icon(Icons.search,size: 35,),label: "Search"),
         BottomNavigationBarItem(icon: Icon(Icons.favorite_outline,size: 35,),label: "Wishlists",activeIcon: Icon(Icons.favorite)),
         BottomNavigationBarItem(icon: Icon(Icons.tips_and_updates_outlined,size: 35,),label: "Trips",),
-        BottomNavigationBarItem(icon: Icon(Icons.message,size: 35,),label: "Messages"),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outline,size: 35,),label: "Messages",activeIcon: Icon(Icons.person,size: 35,)),
+        BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.message ,size: 35,),label: "Messages"),
+        BottomNavigationBarItem(icon: Icon(Icons.person_outline,size: 35,),label: "Profile",activeIcon: Icon(CupertinoIcons.profile_circled,size: 35,)),
 
 
       ],
