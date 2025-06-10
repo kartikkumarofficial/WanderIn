@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:wanderin/presentation/widgets/place_card.dart';
 import 'ExploreScreen.dart';
 import '../widgets/search_box.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class HomesScreen extends StatelessWidget {
+
   HomesScreen({super.key});
 
   @override
@@ -10,6 +14,7 @@ class HomesScreen extends StatelessWidget {
     var srcheight = MediaQuery.of(context).size.height;
     var srcwidth = MediaQuery.of(context).size.width;
     late bool isFav ;
+
 
     return Scaffold(
       body: Padding(
@@ -22,50 +27,22 @@ class HomesScreen extends StatelessWidget {
               trailing:Icon(Icons.arrow_forward_ios) ,
             ),
 
-            Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
+            Expanded(
+              child: ListView(
+
+                scrollDirection: Axis.horizontal,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Image(
-                      height: srcwidth*0.42,
-                      width: srcwidth*0.45,
-                      image: NetworkImage("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1"),
-
-                    fit: BoxFit.cover,
-                    ),
-                  ),
-
-                  Positioned(
-                      right: 0
-                      ,child: IconButton(
-                    enableFeedback: false,
-
-
-
-                    icon: Icon(Icons.favorite),
-                    iconSize: 26,
-                    onPressed: (){
-                    },
-                    color: Color.fromRGBO(54, 54, 66,0.6),
-
-                  )),
+                  Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                  SizedBox(width: 10,),
+                  Place_Card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
+                  SizedBox(width: 10,),
+                  Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                  SizedBox(width: 10,),
 
                 ],
               ),
-              Padding(
-                padding:  EdgeInsets.only(left: 8.0,top: 3),
-                child: Text("Hotel in Greater Noida",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-              ),
-              Padding(
-                padding:  EdgeInsets.only(left: 8.0),
-                child: Text("\$35 for 2 nights",style: TextStyle(fontSize: 14,color: Colors.grey),textAlign: TextAlign.center,
-              ),)
-            ],
-                          )
-            
+            )
+
 
 
 
@@ -78,3 +55,5 @@ class HomesScreen extends StatelessWidget {
 
 
 }
+
+

@@ -1,36 +1,147 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+class Place_Card extends StatefulWidget {
+  const Place_Card({
+    super.key,
+    required this.srcwidth,
+    required this.isGuestFavourite,
+    required this.isWishlisted,
+  });
 
-class PlaceCard extends StatelessWidget {
-  const PlaceCard({super.key});
+  final double srcwidth;
+  final dynamic isGuestFavourite;
+
+  final dynamic isWishlisted;
 
   @override
+  State<Place_Card> createState() => _Place_CardState();
+}
+
+class _Place_CardState extends State<Place_Card> {
+
+  late bool wishlisted;
+
+  @override
+  void initState() {
+
+    super.initState();
+    wishlisted = widget.isWishlisted;
+  }
+  @override
   Widget build(BuildContext context) {
-    var srcheight = MediaQuery.of(context).size.height;
-    var srcwidth = MediaQuery.of(context).size.width;
 
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: Colors.blue,
-      ),
-      height: srcheight*0.2,
-      width: srcwidth*0.9,
+      // color: Colors.red,
+
+      width: widget.srcwidth*0.45,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding:  EdgeInsets.all(0.0),
-            child: Image.network("https://www.outlooktravelmag.com/media/bali-1-1582544096.profileImage.2x-1536x884.webp"
-            ),
+          Stack(
+            children: [
+
+
+              ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image(
+                  height: widget.srcwidth*0.42,
+                  width: widget.srcwidth*0.45,
+                  image: NetworkImage("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1"),
+
+                  fit: BoxFit.cover,
+                ),
+              ),
+              if (widget.isGuestFavourite)
+                Positioned(
+                  top: widget.srcwidth*0.03,
+                  left: widget.srcwidth*0.04,
+                  child: Container(
+
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.8),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      'Guest Favourite',
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+
+
+              Positioned(
+                  right: 0
+                  ,child: IconButton(
+                enableFeedback: true,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                icon: Icon(Icons.favorite),
+                iconSize: 29,
+                onPressed: (){
+
+                },
+                color: Colors.white,
+              )),
+              Positioned(
+                  right: 0
+                  ,child: IconButton(
+                enableFeedback: false,
+                icon: Icon(Icons.favorite),
+                iconSize: 26,
+                onPressed: (){
+                  setState(() {
+                    wishlisted = !wishlisted;
+                  });
+                },
+                color: wishlisted? Colors.red :Color.fromRGBO(54, 54, 66,0.6),
+              )),
+
+
+            ],
           ),
-          Text(""),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text("Hotel in Greater Noida",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "\$35 for 2 nights",
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left:4),
+                    child: Icon(FontAwesomeIcons.solidStar, color: Colors.grey, size: 14),
+                  ),
+                  Text(
+                    " 4.84",
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ],
+          )
+
         ],
       ),
-
     );
   }
 }
-
-
