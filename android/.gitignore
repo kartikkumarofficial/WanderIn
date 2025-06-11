@@ -7,6 +7,8 @@ gradle-wrapper.jar
 GeneratedPluginRegistrant.java
 .cxx/
 lib/constants.dart
+constants.dart
+
 
 
 # Remember to never publicly share your keystore.
