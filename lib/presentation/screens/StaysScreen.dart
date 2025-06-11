@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:wanderin/presentation/widgets/place_card.dart';
-import 'ExploreScreen.dart';
+
 import '../widgets/search_box.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomesScreen extends StatelessWidget {
+class StaysScreen extends StatelessWidget {
 
-  HomesScreen({super.key});
+  StaysScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class HomesScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.04),
                 child: ListTile(
 
-                  title: Text("Popular homes in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
+                  title: Text("Popular Stays in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
                   trailing:Icon(Icons.arrow_forward_ios) ,
                 ),
               ),
@@ -53,7 +53,7 @@ class HomesScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.04),
                 child: ListTile(
 
-                  title: Text("Popular homes in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
+                  title: Text("Popular Stays in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
                   trailing:Icon(Icons.arrow_forward_ios) ,
                 ),
               ),
@@ -80,7 +80,7 @@ class HomesScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.04),
                 child: ListTile(
 
-                  title: Text("Popular homes in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
+                  title: Text("Popular Stays in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
                   trailing:Icon(Icons.arrow_forward_ios) ,
                 ),
               ),

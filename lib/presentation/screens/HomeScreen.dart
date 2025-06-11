@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wanderin/presentation/screens/HomesScreen.dart';
+import 'package:wanderin/presentation/screens/StaysScreen.dart';
 import 'package:wanderin/presentation/widgets/bottomnavbar.dart';
 import '../widgets/search_box.dart';
 import 'AdventuresScreen.dart';
 import 'Extras.dart';
 
-class ExploreScreen extends StatefulWidget {
-  ExploreScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
 
   @override
-  State<ExploreScreen> createState() => _ExploreScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   final TextEditingController searchController = TextEditingController();
   late TabController _tabController;
   late ScrollController _scrollController;
   bool showIcons = true;
 
   final List<Widget> _tabViews = [
-    HomesScreen(),
+    StaysScreen(),
     AdventuresScreen(),
     ExtrasScreen()
   ];
@@ -88,7 +88,7 @@ class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProvider
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey,
                 tabs: [
-                  Tab(icon: showIcons ? Icon(Icons.home) : null, text: 'Home'),
+                  Tab(icon: showIcons ? Icon(Icons.home) : null, text: 'Stays'),
                   Tab(icon: showIcons ? Icon(Icons.sports) : null, text: 'Adventures'),
                   Tab(icon: showIcons ? Icon(Icons.room_service) : null, text: 'Extras'),
                 ],
