@@ -21,20 +21,35 @@ class _BottomnavbarState extends State<Bottomnavbar> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar (
+    return BottomNavigationBar(
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.grey,
       type: BottomNavigationBarType.fixed,
       onTap: _onItemTapped,
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.search,size: 35,),label: "Search"),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite_outline,size: 35,),label: "Wishlists",activeIcon: Icon(Icons.favorite)),
-        BottomNavigationBarItem(icon: Icon(Icons.tips_and_updates_outlined,size: 35,),label: "Trips",),
-        BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.message ,size: 35,),label: "Messages"),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outline,size: 35,),label: "Profile",activeIcon: Icon(CupertinoIcons.profile_circled,size: 35,)),
-
-
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.explore_outlined, size: 30),
+          label: "Explore",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite_outline, size: 30),
+          activeIcon: Icon(Icons.favorite),
+          label: "Wishlists",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.tips_and_updates_outlined, size: 30),
+          label: "Trips",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesomeIcons.message, size: 30),
+          label: "Messages",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person_outline, size: 30),
+          activeIcon: Icon(CupertinoIcons.profile_circled),
+          label: "Profile",
+        ),
       ],
     );
   }

@@ -1,7 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:wanderin/presentation/screens/HomeScreen.dart';
+import 'package:wanderin/presentation/MainScaffold.dart';
+import 'package:wanderin/presentation/screens/ExploreScreen.dart';
 
 
 
@@ -9,13 +10,13 @@ class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/second':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/third':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/fourth':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => MainScaffold());
       default:
         return MaterialPageRoute(builder: (_) =>
             Scaffold(body: Center(
