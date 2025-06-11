@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wanderin/presentation/MainScaffold.dart';
 import 'package:wanderin/presentation/screens/ExploreScreen.dart';
+import 'package:wanderin/presentation/screens/auth/LoginScreen.dart';
 
 
 
@@ -10,7 +11,7 @@ class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => MainScaffold());
+        return MaterialPageRoute(builder: (_) => LoginPage());
       case '/second':
         return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/third':
