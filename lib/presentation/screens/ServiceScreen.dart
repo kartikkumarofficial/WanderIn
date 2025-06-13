@@ -79,16 +79,18 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
 
                 Padding(
-                  padding: EdgeInsets.only(top: srcheight*0.31),
+                  padding: EdgeInsets.only(top: srcheight * 0.31),
                   child: Container(
                     constraints: BoxConstraints(
-                      minHeight: MediaQuery.of(context).size.height - (srcheight * 0.31),
+                      minHeight:
+                          MediaQuery.of(context).size.height -
+                          (srcheight * 0.31),
                     ),
                     padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.05),
                     decoration: BoxDecoration(
@@ -106,14 +108,20 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         Center(
                           child: Text(
                             'Mountain View Cabin',
-                            style: GoogleFonts.playfair(fontWeight: FontWeight.bold, fontSize: srcwidth * 0.075),
+                            style: GoogleFonts.playfair(
+                              fontWeight: FontWeight.bold,
+                              fontSize: srcwidth * 0.075,
+                            ),
                           ),
                         ),
                         SizedBox(height: srcheight * 0.001),
                         Center(
                           child: Text(
                             'Solang Valley, Himachal Pradesh',
-                            style: TextStyle(color: Colors.grey[600], fontSize: srcwidth * 0.035),
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: srcwidth * 0.035,
+                            ),
                           ),
                         ),
                         SizedBox(height: srcheight * 0.015),
@@ -121,35 +129,47 @@ class _ServiceScreenState extends State<ServiceScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left:4),
-                              child: Icon(FontAwesomeIcons.solidStar, color: Colors.black, size: 14),
+                              padding: EdgeInsets.only(left: 4),
+                              child: Icon(
+                                FontAwesomeIcons.solidStar,
+                                color: Colors.black,
+                                size: 14,
+                              ),
                             ),
                             Text(
                               " 4.84",
-                              style: TextStyle(fontSize: 14, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
                               textAlign: TextAlign.center,
                             ),
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
                               '•',
-                              style: TextStyle(fontSize: 14, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
                             ),
 
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
                               "59 reviews",
-                              style: TextStyle(fontSize: 14, color: Colors.black),
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
                               textAlign: TextAlign.center,
                             ),
-
                           ],
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -157,108 +177,135 @@ class _ServiceScreenState extends State<ServiceScreen> {
                               contentPadding: EdgeInsets.zero,
                               leading: Icon(Icons.ac_unit),
                               title: Text("Designed to stay cool"),
-                              subtitle: Text("Traditional architecture keeps the space naturally ventilated and cool."),
+                              subtitle: Text(
+                                "Traditional architecture keeps the space naturally ventilated and cool.",
+                              ),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.eco, ),
+                              leading: Icon(Icons.eco),
                               title: Text("Eco-Friendly Living"),
-                              subtitle: Text("Built with sustainable materials and surrounded by nature."),
+                              subtitle: Text(
+                                "Built with sustainable materials and surrounded by nature.",
+                              ),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.bedroom_parent, ),
+                              leading: Icon(Icons.bedroom_parent),
                               title: Text("Scenic Private Rooms"),
-                              subtitle: Text("Each room features large windows with stunning mountain views."),
+                              subtitle: Text(
+                                "Each room features large windows with stunning mountain views.",
+                              ),
                             ),
                           ],
                         ),
 
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
 
-                        Text('About this place',
-                            style: GoogleFonts.sourceSerif4(fontSize: srcwidth * 0.046, fontWeight: FontWeight.w500)),
+                        Text(
+                          'About this place',
+                          style: GoogleFonts.sourceSerif4(
+                            fontSize: srcwidth * 0.046,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         SizedBox(height: 8),
                         Text(
-                            'Escape to a serene Himalayan retreat surrounded by snow-capped peaks and lush forests. Perfect for nature lovers and couples.'),
-                        SizedBox(height: srcwidth*0.03,),
+                          'Escape to a serene Himalayan retreat surrounded by snow-capped peaks and lush forests. Perfect for nature lovers and couples.',
+                        ),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
-                        Text('Features',
-                            style: GoogleFonts.sourceSerif4(fontSize: srcwidth * 0.046, fontWeight: FontWeight.w500)),
+                        SizedBox(height: srcwidth * 0.03),
+                        Text(
+                          'Features',
+                          style: GoogleFonts.sourceSerif4(
+                            fontSize: srcwidth * 0.046,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         SizedBox(height: 8),
                         Column(
                           children: [
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.wifi ),
+                              leading: Icon(Icons.wifi),
                               title: Text("Wi-Fi"),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.desktop_windows ),
+                              leading: Icon(Icons.desktop_windows),
                               title: Text("Dedicated Workspace"),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.tv ),
+                              leading: Icon(Icons.tv),
                               title: Text("TV"),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.local_laundry_service ),
+                              leading: Icon(Icons.local_laundry_service),
                               title: Text("Washer"),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.smoke_free ),
+                              leading: Icon(Icons.smoke_free),
                               title: Text("Smoke Alarm"),
                             ),
                             ListTile(
                               contentPadding: EdgeInsets.zero,
-                              leading: Icon(Icons.local_car_wash ),
+                              leading: Icon(Icons.local_car_wash),
                               title: Text("Car Wash"),
                             ),
                           ],
                         ),
 
-
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
-                        Text('Location',
-                            style: GoogleFonts.sourceSerif4(fontSize: srcwidth * 0.046, fontWeight: FontWeight.w500)),
-                        SizedBox(height: 20,),
+                        SizedBox(height: srcwidth * 0.03),
+                        Text(
+                          'Location',
+                          style: GoogleFonts.sourceSerif4(
+                            fontSize: srcwidth * 0.046,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+
                         //todo iplement map
-
                         Container(
-                          height: srcheight*0.5,
-                          width: srcwidth*0.9,
+                          height: srcheight * 0.5,
+                          width: srcwidth * 0.9,
                           color: Colors.grey.withOpacity(0.4),
-                          child: Center(child: Text("Map coming soon"),),
+                          child: Center(child: Text("Map coming soon")),
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
-                        Text(' Meet your host',
-                            style: GoogleFonts.sourceSerif4(fontSize: srcwidth * 0.045, fontWeight: FontWeight.w500)),
-                        SizedBox(height: 10,),
+                        SizedBox(height: srcwidth * 0.03),
+                        Text(
+                          ' Meet your host',
+                          style: GoogleFonts.sourceSerif4(
+                            fontSize: srcwidth * 0.045,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(height: 10),
                         HostCard(
-                          imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/031/542/476/small_2x/beautiful-asian-girl-in-fashionable-outfit-ai-generative-photo.jpg',
+                          imageUrl:
+                              'https://static.vecteezy.com/system/resources/thumbnails/031/542/476/small_2x/beautiful-asian-girl-in-fashionable-outfit-ai-generative-photo.jpg',
                           hostName: 'Aanya Sharma',
                           rating: 4.9,
                           reviews: 122,
@@ -272,41 +319,54 @@ class _ServiceScreenState extends State<ServiceScreen> {
                           icon: Icon(FontAwesomeIcons.commentDots),
                           label: Text('Connect with Host'),
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
                         ),
-                        SizedBox(height: srcwidth*0.03,),
+                        SizedBox(height: srcwidth * 0.03),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left:4),
-                              child: Icon(Icons.star, color: Colors.black, size: srcwidth*0.05),
+                              padding: EdgeInsets.only(left: 4),
+                              child: Icon(
+                                Icons.star,
+                                color: Colors.black,
+                                size: srcwidth * 0.05,
+                              ),
                             ),
                             Text(
                               "4.84",
-                              style: GoogleFonts.sourceSerif4(fontSize: srcwidth*0.05, color: Colors.black),
+                              style: GoogleFonts.sourceSerif4(
+                                fontSize: srcwidth * 0.05,
+                                color: Colors.black,
+                              ),
                               textAlign: TextAlign.center,
                             ),
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
                               ' • ',
-                              style: GoogleFonts.sourceSerif4(fontSize: srcwidth*0.05, color: Colors.black),
+                              style: GoogleFonts.sourceSerif4(
+                                fontSize: srcwidth * 0.05,
+                                color: Colors.black,
+                              ),
                             ),
 
-                            SizedBox(width: 5,),
+                            SizedBox(width: 5),
                             Text(
                               "59 reviews",
-                              style: GoogleFonts.poppins(fontSize: srcwidth*0.05, color: Colors.black,fontWeight: FontWeight.w500),
+                              style: GoogleFonts.poppins(
+                                fontSize: srcwidth * 0.05,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                              ),
                               textAlign: TextAlign.center,
                             ),
-
                           ],
                         ),
                         SizedBox(
-                          height: srcheight*0.24,
+                          height: srcheight * 0.24,
 
                           child: PageView(
                             controller: _page2Controller,
@@ -314,56 +374,50 @@ class _ServiceScreenState extends State<ServiceScreen> {
                               ReviewCard(
                                 reviewerName: "Abhishek",
                                 reviewText:
-                                "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
+                                    "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
                                 timeAgo: "1 month ago",
                                 platform: "Airbnb",
                               ),
                               ReviewCard(
                                 reviewerName: "Abhishek",
                                 reviewText:
-                                "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
+                                    "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
                                 timeAgo: "1 month ago",
                                 platform: "Airbnb",
                               ),
                               ReviewCard(
                                 reviewerName: "Abhishek",
                                 reviewText:
-                                "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
+                                    "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
                                 timeAgo: "1 month ago",
                                 platform: "Airbnb",
                               ),
                               ReviewCard(
                                 reviewerName: "Abhishek",
                                 reviewText:
-                                "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
+                                    "Staff and workers were helpful and kind. Images on website perfectly matches in real. Nice space, clean bathroom, good lighting. Hope...",
                                 timeAgo: "1 month ago",
                                 platform: "Airbnb",
                               ),
-
                             ],
                           ),
                         ),
                         Center(
                           child: SizedBox(
-
-                            width: srcwidth*0.8,
+                            width: srcwidth * 0.8,
                             child: ElevatedButton(
-
-                            style: ElevatedButton.styleFrom(
-
+                              style: ElevatedButton.styleFrom(),
+                              onPressed: () {},
+                              child: Text("Show all 59 reviews"),
                             ),
-                                onPressed: (){},
-                                child: Text("Show all 59 reviews")),
                           ),
                         ),
 
                         SizedBox(height: srcheight * 0.1),
-
-
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -383,10 +437,9 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     offset: Offset(0, -4),
                   ),
                 ],
-
               ),
               child: Padding(
-                padding:  EdgeInsets.only(left: srcwidth*0.04),
+                padding: EdgeInsets.only(left: srcwidth * 0.04),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -395,28 +448,34 @@ class _ServiceScreenState extends State<ServiceScreen> {
                       children: [
                         Text(
                           '₹2,500 / night',
-                          style: GoogleFonts.inter(fontWeight: FontWeight.w600 , fontSize: 18),
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
                         ),
                         Text(
                           'Jun 15 - Jun 17',
-                          style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[600],
+                          ),
                         ),
+                        // SizedBox(height: 5,)
                       ],
                     ),
 
-                    // Reserve Button
                     ElevatedButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                        backgroundColor: Colors.pinkAccent,
+                      ),
+                      child: Text(
+                        "Reserve",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: srcwidth * 0.04,
                         ),
                       ),
-                      child: Text("Reserve", style: TextStyle(fontSize: 16)),
                     ),
                   ],
                 ),
