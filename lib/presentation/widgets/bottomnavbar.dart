@@ -1,38 +1,28 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Bottomnavbar extends StatefulWidget {
+class Bottomnavbar extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int> onTap;
 
-  const Bottomnavbar({super.key});
-
-  @override
-  State<Bottomnavbar> createState() => _BottomnavbarState();
-}
-
-class _BottomnavbarState extends State<Bottomnavbar> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex=index;
-    });
-  }
+  const Bottomnavbar({
+    Key? key,
+    required this.currentIndex,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: _selectedIndex,
-
+      currentIndex: currentIndex,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.grey,
       type: BottomNavigationBarType.fixed,
-      onTap: _onItemTapped,
-      items: [
+      onTap: onTap,
+      items: const [
         BottomNavigationBarItem(
           icon: Icon(FontAwesomeIcons.compass, size: 25),
           label: "Explore",
-
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_outline, size: 30),
