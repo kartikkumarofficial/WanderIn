@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void showTripsIntroSheet(BuildContext context) {
+void showWishlistIntroSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,

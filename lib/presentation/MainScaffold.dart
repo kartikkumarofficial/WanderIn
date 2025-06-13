@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wanderin/presentation/screens/ExploreScreen.dart';
 import 'package:wanderin/presentation/screens/WishlistsScreen.dart';
-import 'package:wanderin/presentation/widgets/TripsIntroSheet.dart';
+import 'package:wanderin/presentation/widgets/WishlistIntroSheet.dart';
 import 'package:wanderin/presentation/widgets/bottomnavbar.dart';
 
 
