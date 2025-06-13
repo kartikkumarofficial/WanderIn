@@ -3,24 +3,35 @@ import 'package:google_fonts/google_fonts.dart';
 
 class FeatureTile extends StatelessWidget {
   final IconData icon;
-  final String label;
+  final String title;
 
-  const FeatureTile({super.key, required this.icon, required this.label});
+
+  const FeatureTile({
+    super.key,
+    required this.icon,
+    required this.title,
+
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.teal, size: 20),
-          SizedBox(width: 10),
-          Text(
-            label,
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(icon, color: Colors.teal, size: 26),
+      title: Text(
+        title,
+        style: GoogleFonts.inter(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
       ),
+      // subtitle: Text(
+      //   subtitle,
+      //   style: GoogleFonts.inter(
+      //     fontSize: 13.5,
+      //     color: Colors.grey[700],
+      //   ),
+      // ),
     );
   }
 }
