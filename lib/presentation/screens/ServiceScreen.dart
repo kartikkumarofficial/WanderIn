@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wanderin/presentation/widgets/feature_tile.dart';
 import 'package:wanderin/presentation/widgets/host_card.dart';
 
 class ServiceScreen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                 ],
               ),
             ),
-        
+
             Positioned(
               top: MediaQuery.of(context).padding.top + 8,
               left: 16,
@@ -65,6 +66,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         ),
                       ),
                       SizedBox(width: 10),
+
                       CircleAvatar(
                         backgroundColor: Colors.white,
                         child: IconButton(
@@ -77,11 +79,13 @@ class _ServiceScreenState extends State<ServiceScreen> {
                 ],
               ),
             ),
-        
+
             Padding(
               padding: EdgeInsets.only(top: srcheight*0.31),
               child: Container(
-                height: srcheight,
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height - (srcheight * 0.31),
+                ),
                 padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.05),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -142,16 +146,30 @@ class _ServiceScreenState extends State<ServiceScreen> {
                       // color: Colors.grey,
                     ),
                     SizedBox(height: srcwidth*0.03,),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 6,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Chip(label: Text('⭐ 4.8')), // Overall rating
-                        Chip(label: Text('Top Rated Host')),
-                        Chip(label: Text('Great Views')),
-                        Chip(label: Text('Free Cancellation')),
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.ac_unit),
+                          title: Text("Designed to stay cool"),
+                          subtitle: Text("Traditional architecture keeps the space naturally ventilated and cool."),
+                        ),
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.eco, ),
+                          title: Text("Eco-Friendly Living"),
+                          subtitle: Text("Built with sustainable materials and surrounded by nature."),
+                        ),
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: Icon(Icons.bedroom_parent, ),
+                          title: Text("Scenic Private Rooms"),
+                          subtitle: Text("Each room features large windows with stunning mountain views."),
+                        ),
                       ],
                     ),
+
                     SizedBox(height: srcwidth*0.03,),
                     Divider(
                       thickness: 0.5,
@@ -173,33 +191,28 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     Text('Features',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
                     SizedBox(height: 8),
-                    Wrap(
-                      spacing: 10,
-                      runSpacing: 8,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Chip(label: Text('Wi-Fi')),
-                        Chip(label: Text('Mountain View')),
-                        Chip(label: Text('Private Parking')),
-                        Chip(label: Text('Heating')),
-                        Chip(label: Text('Breakfast Included')),
-                        Chip(label: Text('Pet Friendly')),
+                        FeatureTile(icon: Icons.wifi, label: 'Wi-Fi'),
+                        FeatureTile(icon: Icons.terrain, label: 'Mountain View'),
+                        FeatureTile(icon: Icons.local_parking, label: 'Private Parking'),
+                        FeatureTile(icon: Icons.fireplace, label: 'Heating'),
+                        FeatureTile(icon: Icons.free_breakfast, label: 'Breakfast Included'),
+                        FeatureTile(icon: Icons.pets, label: 'Pet Friendly'),
                       ],
                     ),
+
                     SizedBox(height: srcwidth*0.03,),
                     Divider(
                       thickness: 0.5,
                       // color: Colors.grey,
                     ),
                     SizedBox(height: srcwidth*0.03,),
-                    ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.map),
-                      label: Text("View on Map"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 14),
-                      ),
+                    Container(
+                      height: srcheight*0.5,
+                      width: srcwidth*0.9,
+                      color: Colors.grey,
                     ),
                     SizedBox(height: srcwidth*0.03,),
                     Divider(
@@ -207,8 +220,9 @@ class _ServiceScreenState extends State<ServiceScreen> {
                       // color: Colors.grey,
                     ),
                     SizedBox(height: srcwidth*0.03,),
-                    Text('Meet your host',
+                    Text(' Meet your host',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 10,),
                     HostCard(
                       imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/031/542/476/small_2x/beautiful-asian-girl-in-fashionable-outfit-ai-generative-photo.jpg',
                       hostName: 'Aanya Sharma',
