@@ -23,32 +23,33 @@ class _BottomnavbarState extends State<Bottomnavbar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _selectedIndex,
+
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.grey,
       type: BottomNavigationBarType.fixed,
       onTap: _onItemTapped,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.explore_outlined, size: 30),
+          icon: Icon(FontAwesomeIcons.compass, size: 25),
           label: "Explore",
 
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_outline, size: 30),
           activeIcon: Icon(Icons.favorite),
-          label: "Wishlists",
+          label: "Wishlist",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.tips_and_updates_outlined, size: 30),
-          label: "Trips",
+          icon: Icon(FontAwesomeIcons.houseChimneyUser, size: 30),
+          label: "Host",
         ),
         BottomNavigationBarItem(
-          icon: Icon(FontAwesomeIcons.message, size: 30),
+          icon: Icon(Icons.chat, size: 30),
           label: "Messages",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline, size: 30),
-          activeIcon: Icon(CupertinoIcons.profile_circled),
+          activeIcon: Icon(FontAwesomeIcons.user),
           label: "Profile",
         ),
       ],
