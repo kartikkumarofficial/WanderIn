@@ -27,10 +27,11 @@ class _BottomnavbarState extends State<Bottomnavbar> {
       unselectedItemColor: Colors.grey,
       type: BottomNavigationBarType.fixed,
       onTap: _onItemTapped,
-      items: const [
+      items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.explore_outlined, size: 30),
           label: "Explore",
+
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_outline, size: 30),

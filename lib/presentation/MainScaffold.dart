@@ -8,7 +8,7 @@ import 'package:wanderin/presentation/widgets/bottomnavbar.dart';
 
 
 class MainScaffold extends StatefulWidget {
-  const MainScaffold({super.key});
+  const  MainScaffold({super.key});
 
   @override
   State<MainScaffold> createState() => _MainScaffoldState();
@@ -25,21 +25,6 @@ class _MainScaffoldState extends State<MainScaffold> {
     Center(child: Text("Profile Screen")),
   ];
 
-  void _onItemTapped(int index) async {
-    if (index == 2) {
-      final prefs = await SharedPreferences.getInstance();
-      final alreadyShown = prefs.getBool('tripsSheetShown') ?? false;
-
-      if (!alreadyShown) {
-        await prefs.setBool('tripsSheetShown', true);
-        showTripsIntroSheet(context);
-      }
-    }
-
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
