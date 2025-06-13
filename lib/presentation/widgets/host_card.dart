@@ -29,7 +29,8 @@ class HostCard extends StatelessWidget {
           children: [
             // Left side: Host Image
             CircleAvatar(
-              backgroundImage: AssetImage(imageUrl),
+              // backgroundImage: AssetImage(imageUrl),
+              backgroundImage: NetworkImage(imageUrl),
               radius: 35,
             ),
 

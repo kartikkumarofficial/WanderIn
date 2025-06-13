@@ -20,76 +20,76 @@ class _ServiceScreenState extends State<ServiceScreen> {
     var srcwidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            height: srcheight * 0.35,
-            width: double.infinity,
-            child: PageView(
-              controller: _pageController,
-              children: [
-                Image.network(
-                  "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1",
-                  fit: BoxFit.cover,
-                ),
-                Image.network(
-                  "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1",
-                  fit: BoxFit.cover,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            SizedBox(
+              height: srcheight * 0.35,
+              width: double.infinity,
+              child: PageView(
+                controller: _pageController,
+                children: [
+                  Image.network(
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1",
+                    fit: BoxFit.cover,
+                  ),
+                  Image.network(
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/d2/48/25/puputan-square.jpg?w=900&h=500&s=1",
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
             ),
-          ),
-
-          Positioned(
-            top: MediaQuery.of(context).padding.top + 8,
-            left: 16,
-            right: 16,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    icon: Icon(CupertinoIcons.arrow_left, size: 20),
-                    onPressed: () => Navigator.of(context).pop(),
+        
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 8,
+              left: 16,
+              right: 16,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(CupertinoIcons.arrow_left, size: 20),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                          icon: Icon(Icons.share_outlined, size: 20),
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                          icon: Icon(Icons.favorite_outline, size: 20),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+        
+            Padding(
+              padding: EdgeInsets.only(top: srcheight*0.31),
+              child: Container(
+                height: srcheight,
+                padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.05),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25),
                   ),
                 ),
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: Icon(Icons.share_outlined, size: 20),
-                        onPressed: () {},
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: Icon(Icons.favorite_outline, size: 20),
-                        onPressed: () {},
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(top: srcheight*0.31),
-            child: Container(
-              height: srcheight,
-              padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.05),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
-                ),
-              ),
-              child: SingleChildScrollView(
                 child: Column(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -210,7 +210,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     Text('Meet your host',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
                     HostCard(
-                      imageUrl: 'assets/images/host.jpg',
+                      imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/031/542/476/small_2x/beautiful-asian-girl-in-fashionable-outfit-ai-generative-photo.jpg',
                       hostName: 'Aanya Sharma',
                       rating: 4.9,
                       reviews: 122,
@@ -260,9 +260,9 @@ class _ServiceScreenState extends State<ServiceScreen> {
                   ],
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
