@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wanderin/presentation/widgets/WishlistIntroSheet.dart';
 
 
@@ -7,6 +8,8 @@ class WishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final srcheight = MediaQuery.of(context).size.height;
+    final srcwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         margin: EdgeInsets.only(right: 35,top: 50),
@@ -16,11 +19,12 @@ class WishlistScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text("Edit",style: TextStyle(fontSize: 16),),
-                ElevatedButton(onPressed: (){
-                  showWishlistIntroSheet(context);
-                },child: Text("hi"),)
+                // ElevatedButton(onPressed: (){
+                //   showWishlistIntroSheet(context);
+                // },child: Text("hi"),)
               ],
-            )
+            ),
+            Text("Wishlists",style: GoogleFonts.caramel(fontSize: srcwidth*0.4),)
           ],
         ),
       ),

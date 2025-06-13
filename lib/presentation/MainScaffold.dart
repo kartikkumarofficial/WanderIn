@@ -15,6 +15,7 @@ class MainScaffold extends StatefulWidget {
 }
 
 class _MainScaffoldState extends State<MainScaffold> {
+
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -34,6 +35,7 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: _screens[_selectedIndex],
       bottomNavigationBar: Bottomnavbar(
