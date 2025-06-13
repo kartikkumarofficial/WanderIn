@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-class Place_Card extends StatefulWidget {
-  const Place_Card({
+class Service_card extends StatefulWidget {
+  const Service_card({
     super.key,
     required this.srcwidth,
     required this.isGuestFavourite,
@@ -16,10 +16,10 @@ class Place_Card extends StatefulWidget {
   final dynamic isWishlisted;
 
   @override
-  State<Place_Card> createState() => _Place_CardState();
+  State<Service_card> createState() => _Service_cardState();
 }
 
-class _Place_CardState extends State<Place_Card> {
+class _Service_cardState extends State<Service_card> {
 
   late bool wishlisted;
 

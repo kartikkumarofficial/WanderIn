@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 15),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/second');
+                  Navigator.of(context).pushReplacementNamed('/second');
                 },
                 child: const Text('Sign in'),
               ),

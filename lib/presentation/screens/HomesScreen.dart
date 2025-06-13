@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:wanderin/presentation/widgets/place_card.dart';
+import 'package:wanderin/presentation/widgets/service_card.dart';
 import 'ExploreScreen.dart';
 import '../widgets/search_box.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -39,38 +39,11 @@ class HomesScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     SizedBox(width: srcwidth*0.04,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
                     SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
                     SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
-                    SizedBox(width: 10,),
-
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.04),
-                child: ListTile(
-
-                  title: Text("Popular homes in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
-                  trailing:Icon(Icons.arrow_forward_ios) ,
-                ),
-              ),
-
-              SizedBox(
-
-                height: srcwidth*0.55,
-                child: ListView(
-
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    SizedBox(width: srcwidth*0.04,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
-                    SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
-                    SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
                     SizedBox(width: 10,),
 
                   ],
@@ -93,11 +66,38 @@ class HomesScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     SizedBox(width: srcwidth*0.04,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
                     SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
                     SizedBox(width: 10,),
-                    Place_Card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    SizedBox(width: 10,),
+
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.04),
+                child: ListTile(
+
+                  title: Text("Popular homes in Dehradun" , style: TextStyle(fontWeight: FontWeight.bold,fontSize: srcheight*0.023),),
+                  trailing:Icon(Icons.arrow_forward_ios) ,
+                ),
+              ),
+
+              SizedBox(
+
+                height: srcwidth*0.55,
+                child: ListView(
+
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    SizedBox(width: srcwidth*0.04,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
+                    SizedBox(width: 10,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: false,isWishlisted: true,),
+                    SizedBox(width: 10,),
+                    Service_card(srcwidth: srcwidth,isGuestFavourite: true,isWishlisted: false,),
                     SizedBox(width: 10,),
 
                   ],
