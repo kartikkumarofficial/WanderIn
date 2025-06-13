@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:wanderin/presentation/MainScaffold.dart';
 import 'package:wanderin/presentation/screens/ExploreScreen.dart';
+import 'package:wanderin/presentation/screens/ServiceScreen.dart';
 import 'package:wanderin/presentation/screens/auth/LoginScreen.dart';
 
 
@@ -15,7 +16,7 @@ class AppRouter {
       case '/second':
         return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/third':
-        return MaterialPageRoute(builder: (_) => MainScaffold());
+        return MaterialPageRoute(builder: (_) => ServiceScreen());
       case '/fourth':
         return MaterialPageRoute(builder: (_) => MainScaffold());
       default:
