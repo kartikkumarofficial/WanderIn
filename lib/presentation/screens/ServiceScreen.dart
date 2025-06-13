@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wanderin/presentation/widgets/host_card.dart';
 
 class ServiceScreen extends StatefulWidget {
   const ServiceScreen({super.key});
@@ -107,7 +108,40 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         style: TextStyle(color: Colors.grey[600], fontSize: srcwidth * 0.035),
                       ),
                     ),
-                    SizedBox(height: srcheight * 0.02),
+                    SizedBox(height: srcheight * 0.015),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left:4),
+                          child: Icon(FontAwesomeIcons.solidStar, color: Colors.black, size: 14),
+                        ),
+                        Text(
+                          " 4.84",
+                          style: TextStyle(fontSize: 14, color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(width: 5,),
+                        Text(
+                          '•',
+                          style: TextStyle(fontSize: 14, color: Colors.black),
+                        ),
+
+                        SizedBox(width: 5,),
+                        Text(
+                          "59 reviews",
+                          style: TextStyle(fontSize: 14, color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+
+                      ],
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
                     Wrap(
                       spacing: 8,
                       runSpacing: 6,
@@ -118,13 +152,24 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         Chip(label: Text('Free Cancellation')),
                       ],
                     ),
-                    SizedBox(height: srcheight * 0.025),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
+
                     Text('About this place',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
                     SizedBox(height: 8),
                     Text(
                         'Escape to a serene Himalayan retreat surrounded by snow-capped peaks and lush forests. Perfect for nature lovers and couples.'),
-                    SizedBox(height: srcheight * 0.025),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
                     Text('Features',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
                     SizedBox(height: 8),
@@ -140,7 +185,12 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         Chip(label: Text('Pet Friendly')),
                       ],
                     ),
-                    SizedBox(height: srcheight * 0.025),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
                     ElevatedButton.icon(
                       onPressed: () {},
                       icon: Icon(Icons.map),
@@ -151,26 +201,35 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         padding: EdgeInsets.symmetric(vertical: 14),
                       ),
                     ),
-                    SizedBox(height: srcheight * 0.03),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
                     Text('Meet your host',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/host.jpg'),
-                        radius: 28,
-                      ),
-                      title: Text('Aanya Sharma', style: TextStyle(fontWeight: FontWeight.bold)),
-                      subtitle: Text('Superhost - Member since 2022'),
-                      trailing: Icon(FontAwesomeIcons.medal, color: Colors.amber),
+                    HostCard(
+                      imageUrl: 'assets/images/host.jpg',
+                      hostName: 'Aanya Sharma',
+                      rating: 4.9,
+                      reviews: 122,
+                      monthsHosting: 15,
+                      isVerified: true,
                     ),
+
                     SizedBox(height: srcheight * 0.015),
                     OutlinedButton.icon(
                       onPressed: () {},
                       icon: Icon(FontAwesomeIcons.commentDots),
                       label: Text('Connect with Host'),
                     ),
-                    SizedBox(height: srcheight * 0.03),
+                    SizedBox(height: srcwidth*0.03,),
+                    Divider(
+                      thickness: 0.5,
+                      // color: Colors.grey,
+                    ),
+                    SizedBox(height: srcwidth*0.03,),
                     Text('Reviews',
                         style: TextStyle(fontSize: srcwidth * 0.045, fontWeight: FontWeight.bold)),
                     ListTile(
