@@ -266,6 +266,25 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(left: srcwidth*0.035),
+                          child: SizedBox(
+
+                            width: srcwidth * 0.81,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.white60.withOpacity(0.8),
+                                elevation: 1,
+
+                              ),
+                              onPressed: () {},
+                              child: Text("Show all 59 reviews",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                            ),
+                          ),
+                        ),
 
                         SizedBox(height: srcwidth * 0.03),
                         Divider(
@@ -314,12 +333,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
                         ),
 
                         SizedBox(height: srcheight * 0.015),
-                        OutlinedButton.icon(
-                          onPressed: () {},
-                          icon: Icon(FontAwesomeIcons.commentDots),
-                          label: Text('Connect with Host'),
-                        ),
-                        SizedBox(height: srcwidth * 0.03),
+
+                        SizedBox(height: srcwidth * 0.0015),
                         Divider(
                           thickness: 0.5,
                           // color: Colors.grey,
@@ -402,13 +417,23 @@ class _ServiceScreenState extends State<ServiceScreen> {
                             ],
                           ),
                         ),
-                        Center(
+
+                        Padding(
+                          padding: EdgeInsets.only(left: srcwidth*0.035),
                           child: SizedBox(
-                            width: srcwidth * 0.8,
+
+                            width: srcwidth * 0.81,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(),
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.white60.withOpacity(0.8),
+                                elevation: 1,
+
+                              ),
                               onPressed: () {},
-                              child: Text("Show all 59 reviews"),
+                              child: Text("Show all 59 reviews",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                             ),
                           ),
                         ),
@@ -487,3 +512,4 @@ class _ServiceScreenState extends State<ServiceScreen> {
     );
   }
 }
+//todo add faqs - availibilitu , small report button at last
