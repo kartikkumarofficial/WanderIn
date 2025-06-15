@@ -61,7 +61,6 @@ class _HostScreenState extends State<HostScreen> {
                       fontSize: srcwidth * 0.10,
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
-
                     ),
                   ),
                 );
