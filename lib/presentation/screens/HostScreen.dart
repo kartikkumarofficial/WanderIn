@@ -60,7 +60,8 @@ class _HostScreenState extends State<HostScreen> {
                     style: GoogleFonts.dancingScript(
                       fontSize: srcwidth * 0.10,
                       fontWeight: FontWeight.w700,
-                      color: Colors.deepOrange,
+                      color: Colors.black,
+
                     ),
                   ),
                 );
