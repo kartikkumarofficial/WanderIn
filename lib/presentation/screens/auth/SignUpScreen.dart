@@ -11,9 +11,19 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  final PasswordController = TextEditingController();
-  final NameController = TextEditingController();
-  final xController = TextEditingController();
+  final passwordController = TextEditingController();
+  final nameController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    emailController.dispose();
+    nameController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +42,13 @@ class _SignUpPageState extends State<SignUpPage> {
                 style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               const SizedBox(height: 30),
-              TextFieldBox('First Name', Icons.person),
+              TextFieldBox(hint:'Name', icon: Icons.person, controller: nameController,),
               const SizedBox(height: 20),
-              TextFieldBox('Last Name', Icons.person_outline),
+              TextFieldBox(hint:'Email',icon:  Icons.email,controller: emailController,),
               const SizedBox(height: 20),
-              TextFieldBox('Email', Icons.email),
+              TextFieldBox(hint:'Password',icon: Icons.lock, isObscure: true,controller: passwordController,),
               const SizedBox(height: 20),
-              TextFieldBox('Password', Icons.lock, isObscure: true),
-              const SizedBox(height: 20),
-              TextFieldBox('Confirm Password', Icons.lock_outline, isObscure: true),
+              TextFieldBox(hint:'Confirm Password', icon:Icons.lock_outline, isObscure: true,controller: confirmPasswordController,),
               const SizedBox(height: 30),
               SizedBox(
                 width: double.infinity,
