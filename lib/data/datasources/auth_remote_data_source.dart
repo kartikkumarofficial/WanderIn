@@ -36,8 +36,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String email,
     required String password,
     required String confirmPassword,
-  }) {
-    // TODO: implement signUpWithEmailPassword
+  }) async {
+    try {
+      supabaseClient.auth.signUp(
+        password: password,
+        email: email,
+        data: {"name": name},
+      );
+    } catch (e) {}
+
     throw UnimplementedError();
   }
 }
