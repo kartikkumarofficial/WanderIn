@@ -14,18 +14,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Map<String, String>> onboardingData = [
     {
-      "title": "Book Hotels Effortlessly",
-      "subtitle": "Explore, select & book your perfect stay",
+      "title": "Find Your Perfect Stay",
+      "subtitle": "Browse, choose & reserve your dream escape",
       "image": "assets/carousel1.jpg"
     },
     {
-      "title": "Services Made Simple",
-      "subtitle": "Reserve spa, activities, and guides easily",
-      "image": "assets/carousel2.jpg"
+      "title": "More Than Just Stays",
+      "subtitle": "Book curated experiences, guided tours, wellness packages, and local services — all in one place",
+      "image": "assets/carousel4.png"
     },
     {
-      "title": "All in One App",
-      "subtitle": "Travel planning simplified in WanderIn",
+      "title": "Share your space",
+      "subtitle": "List your space or service, manage bookings, and earn effortlessly.",
       "image": "assets/carousel3.png"
     },
   ];
@@ -43,7 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             options: CarouselOptions(
               height: srcheight,
               autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 4),
+              autoPlayInterval: const Duration(seconds: 5),
               viewportFraction: 1,
               onPageChanged: (index, reason) {
                 setState(() => currentIndex = index);
@@ -76,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Column(
                         children: [
-                          SizedBox(height: srcheight * 0.63),
+                          SizedBox(height: srcheight * 0.633),
                           Text(
                             item["title"]!,
                             textAlign: TextAlign.center,
