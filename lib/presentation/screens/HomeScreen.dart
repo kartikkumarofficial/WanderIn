@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           children: _tabViews,
         ),
       ),
-      bottomNavigationBar: Bottomnavbar(),
+      bottomNavigationBar: Bottomnavbar(currentIndex: 1, onTap: (value) => null,), // not used anymore
     );
   }
 }

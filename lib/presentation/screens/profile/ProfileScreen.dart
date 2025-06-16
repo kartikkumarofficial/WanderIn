@@ -62,8 +62,11 @@ class ProfileScreen extends StatelessWidget {
                     right: srcwidth * 0.05,
                     child: CircleAvatar(
                       backgroundColor: Colors.grey.shade200,
-                      child: Icon(
-                        Icons.notifications_none,
+                      child: IconButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed('/fourth');
+                        },
+                        icon:Icon(Icons.notifications_none),
                         color: Colors.black,
                       ),
                     ),

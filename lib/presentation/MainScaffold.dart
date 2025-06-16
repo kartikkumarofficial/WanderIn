@@ -3,8 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wanderin/presentation/screens/ExploreScreen.dart';
 import 'package:wanderin/presentation/screens/HostScreen.dart';
-import 'package:wanderin/presentation/screens/ProfileScreen.dart';
+
 import 'package:wanderin/presentation/screens/WishlistScreen.dart';
+import 'package:wanderin/presentation/screens/profile/ProfileScreen.dart';
 import 'package:wanderin/presentation/widgets/WishlistIntroSheet.dart';
 import 'package:wanderin/presentation/widgets/bottomnavbar.dart';
 
