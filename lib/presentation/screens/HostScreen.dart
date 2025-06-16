@@ -43,101 +43,132 @@ class _HostScreenState extends State<HostScreen> {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F9F9),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {
+
+        },
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 28, vertical: 18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          backgroundColor: Colors.deepOrange,
+          elevation: 10,
+          shadowColor: Colors.deepOrangeAccent.withOpacity(0.5),
+        ),
+        child: Text(
+          'List Your Place',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            letterSpacing: 0.5,
+          ),
+        ),
+      ),
+
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: srcwidth * 0.05),
-          child: ListView.builder(
-            controller: _scrollController,
-            itemCount: listings.length + 1,
-            itemBuilder: (context, index) {
-              if (index == 0) {
+          child: Expanded(
+            child: ListView.builder(
+              controller: _scrollController,
+              itemCount: listings.length + 1,
+              itemBuilder: (context, index) {
+                if (index == 0) {
 
-                return Padding(
-                  padding: const EdgeInsets.only(top: 24.0, bottom: 20),
-                  child: Text(
-                    "Your Listings",
-                    style: GoogleFonts.dancingScript(
-                      fontSize: srcwidth * 0.10,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                    ),
-                  ),
-                );
-              }
-              final item = listings[index - 1];
-              return Card(
-                margin: const EdgeInsets.only(bottom: 20),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                elevation: 5,
-                shadowColor: Colors.black26,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    ClipRRect(
-                      borderRadius:
-                      const BorderRadius.vertical(top: Radius.circular(16)),
-                      child: CachedNetworkImage(
-                        imageUrl: item['imageUrl']!,
-                        height: srcheight * 0.25,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) => Container(
-                          height: 200,
-                          color: Colors.grey[300],
-                        ),
-                        errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item['title']!,
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 24.0, bottom: 20),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Your Listings",
+                          style: GoogleFonts.dancingScript(
+                            fontSize: srcwidth * 0.10,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
                           ),
-                          const SizedBox(height: 6),
-                          Row(
-                            children: [
-                              const Icon(Icons.location_on,
-                                  size: 16, color: Colors.redAccent),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Text(
-                                  item['location']!,
-                                  style: GoogleFonts.roboto(
-                                    fontSize: 14,
-                                    color: Colors.grey[700],
+                        ),
+
+
+                      ],
+                    ),
+                  );
+                }
+                final item = listings[index - 1];
+                return Card(
+                  margin: const EdgeInsets.only(bottom: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  elevation: 5,
+                  shadowColor: Colors.black26,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                      ClipRRect(
+                        borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(16)),
+                        child: CachedNetworkImage(
+                          imageUrl: item['imageUrl']!,
+                          height: srcheight * 0.25,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) => Container(
+                            height: 200,
+                            color: Colors.grey[300],
+                          ),
+                          errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              item['title']!,
+                              style: GoogleFonts.poppins(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+                            Row(
+                              children: [
+                                const Icon(Icons.location_on,
+                                    size: 16, color: Colors.redAccent),
+                                const SizedBox(width: 4),
+                                Expanded(
+                                  child: Text(
+                                    item['location']!,
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 14,
+                                      color: Colors.grey[700],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            item['price']!,
-                            style: GoogleFonts.lato(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.green[700],
+                              ],
                             ),
-                          ),
-                        ],
+                            const SizedBox(height: 8),
+                            Text(
+                              item['price']!,
+                              style: GoogleFonts.lato(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.green[700],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              );
-            },
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

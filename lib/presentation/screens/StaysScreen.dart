@@ -17,6 +17,7 @@ class StaysScreen extends StatelessWidget {
 
 
     return Scaffold(
+
       body: ListView(
         children: [
           Column(
