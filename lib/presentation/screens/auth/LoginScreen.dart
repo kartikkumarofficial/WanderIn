@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wanderin/presentation/screens/OnboardingScreen.dart';
 import 'package:wanderin/presentation/screens/auth/SignUpScreen.dart';
+import 'package:wanderin/presentation/widgets/social_login_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -20,11 +22,12 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             TextField(
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey[900],
                 prefixIcon: const Icon(Icons.email),
-                hintText: 'Email or username',
+                hintText: 'Email',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -32,7 +35,6 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
-
               obscureText: true,
               decoration: InputDecoration(
                 filled: true,
@@ -81,27 +83,22 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            const Text('or', style: TextStyle(color: Colors.white70)),
+            const Text('or sign in with', style: TextStyle(color: Colors.white70)),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                socialIcon(Icons.facebook),
-                socialIcon(Icons.camera_alt),
-                socialIcon(Icons.apple),
-                socialIcon(Icons.alternate_email),
+                socialLoginButton('assets/auth/google.png',(){}),
+                socialLoginButton('assets/auth/facebook.png',(){}),
+                socialLoginButton('assets/auth/apple.png',(){}),
+                socialLoginButton('assets/auth/x.png',(){}),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget socialIcon(IconData icon) {
-    return CircleAvatar(
-      backgroundColor: Colors.white,
-      child: Icon(icon, color: Colors.black),
-    );
-  }
+
 }
