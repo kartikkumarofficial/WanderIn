@@ -32,7 +32,7 @@ class DefaultFirebaseOptions {
   }
 
   static final FirebaseOptions web = FirebaseOptions(
-    apiKey: Keys.webApiKey,
+    apiKey: Secrets.webApiKey,
     appId: '1:473602958624:web:1ef3d518ce5c6ea6a1a345',
     messagingSenderId: '473602958624',
     projectId: 'airbnb-07',
@@ -42,7 +42,7 @@ class DefaultFirebaseOptions {
   );
 
   static final FirebaseOptions android = FirebaseOptions(
-    apiKey: Keys.androidApiKey,
+    apiKey: Secrets.androidApiKey,
     appId: '1:473602958624:android:645ea11101d032a2a1a345',
     messagingSenderId: '473602958624',
     projectId: 'airbnb-07',
@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   );
 
   static final FirebaseOptions ios = FirebaseOptions(
-    apiKey: Keys.iosApiKey,
+    apiKey: Secrets.iosApiKey,
     appId: '1:473602958624:ios:5f671644f45c711ba1a345',
     messagingSenderId: '473602958624',
     projectId: 'airbnb-07',
@@ -59,7 +59,7 @@ class DefaultFirebaseOptions {
   );
 
   static final FirebaseOptions macos = FirebaseOptions(
-    apiKey: Keys.macosApiKey,
+    apiKey: Secrets.macosApiKey,
     appId: '1:473602958624:ios:5f671644f45c711ba1a345',
     messagingSenderId: '473602958624',
     projectId: 'airbnb-07',
@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
   );
 
   static final FirebaseOptions windows = FirebaseOptions(
-    apiKey: Keys.windowsApiKey,
+    apiKey: Secrets.windowsApiKey,
     appId: '1:473602958624:web:5c1a3c7ea9ef91d0a1a345',
     messagingSenderId: '473602958624',
     projectId: 'airbnb-07',
