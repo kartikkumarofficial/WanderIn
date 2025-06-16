@@ -11,6 +11,7 @@ class TextFieldBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: Colors.white),
       validator: (value){
         if (value == null || value.isEmpty){
           return " $hint is missing!";
@@ -19,9 +20,10 @@ class TextFieldBox extends StatelessWidget {
       },
       obscureText: isObscure,
       decoration: InputDecoration(
+        hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
         filled: true,
         fillColor: Colors.grey[900],
-        prefixIcon: Icon(icon),
+        prefixIcon: Icon(icon,color: Colors.grey.withOpacity(0.5),),
         hintText: hint,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
