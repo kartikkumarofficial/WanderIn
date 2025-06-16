@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black26,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
@@ -87,9 +87,9 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 socialIcon(Icons.facebook),
-                socialIcon(Icons.camera_alt), // Instagram icon replacement
+                socialIcon(Icons.camera_alt),
                 socialIcon(Icons.apple),
-                socialIcon(Icons.alternate_email), // Twitter icon replacement
+                socialIcon(Icons.alternate_email),
               ],
             )
           ],
