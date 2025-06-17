@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wanderin/presentation/bloc/auth_bloc.dart';
 import 'package:wanderin/presentation/widgets/text_field_box.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -27,7 +31,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(backgroundColor: Colors.black),
@@ -39,16 +42,26 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Text(
                 'Create Account',
-                style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+                style: GoogleFonts.poppins(fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               const SizedBox(height: 30),
-              TextFieldBox(hint:'Name', icon: Icons.person, controller: nameController,),
+              TextFieldBox(
+                hint: 'Name', icon: Icons.person, controller: nameController,),
               const SizedBox(height: 20),
-              TextFieldBox(hint:'Email',icon:  Icons.email,controller: emailController,),
+              TextFieldBox(
+                hint: 'Email', icon: Icons.email, controller: emailController,),
               const SizedBox(height: 20),
-              TextFieldBox(hint:'Password',icon: Icons.lock, isObscure: true,controller: passwordController,),
+              TextFieldBox(hint: 'Password',
+                icon: Icons.lock,
+                isObscure: true,
+                controller: passwordController,),
               const SizedBox(height: 20),
-              TextFieldBox(hint:'Confirm Password', icon:Icons.lock_outline, isObscure: true,controller: confirmPasswordController,),
+              TextFieldBox(hint: 'Confirm Password',
+                icon: Icons.lock_outline,
+                isObscure: true,
+                controller: confirmPasswordController,),
               const SizedBox(height: 30),
               SizedBox(
                 width: double.infinity,
@@ -59,8 +72,13 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                   ),
                   onPressed: () {
-                    if(formKey.currentState!.validate()){
-
+                    if (formKey.currentState!.validate()) {
+                      context.read<AuthBloc>().add(
+                          AuthSignUp(
+                              email: emailController.text.trim(),
+                              password: passwordController.text.trim(),
+                              name: nameController.text.trim(),
+                              confirmPassword: confirmPasswordController.text.trim()));
                     }
                   },
                   child: const Text('Sign Up'),
