@@ -3,5 +3,5 @@ import 'package:flutter/material.dart';
 class Failure{
   final String message;
 
-  Failure({this.message= 'An unexpected error occured'});
+  Failure([this.message= 'An unexpected error occured']);
 }

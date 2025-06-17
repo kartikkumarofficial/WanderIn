@@ -45,11 +45,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         data: {"name": name},
       );
       if(response.user==null){
-        throw ServerException(message: 'User is null');
+        throw ServerException('User is null');
       }
       return response.user!.id;
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException(e.toString());
     }
   }
 }
