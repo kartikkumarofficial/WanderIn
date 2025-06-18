@@ -36,7 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(backgroundColor: Colors.black),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: BlocListener<AuthBloc, AuthBloc>(
+        child: BlocListener<AuthBloc, AuthState>(
 
   listener: (context, state) {
     if (state is AuthLoading) {
@@ -94,7 +94,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     //           password: passwordController.text.trim(),
                     //           name: nameController.text.trim(),
                     //           confirmPassword: confirmPasswordController.text.trim()));
-                    }
+                    // }
                   },
                   child: const Text('Sign Up'),
                 ),
