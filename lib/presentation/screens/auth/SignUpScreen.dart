@@ -87,14 +87,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                   ),
                   onPressed: () {
-                    // if (formKey.currentState!.validate()) {
-                    //   context.read<AuthBloc>().add(
-                    //       AuthSignUp(
-                    //           email: emailController.text.trim(),
-                    //           password: passwordController.text.trim(),
-                    //           name: nameController.text.trim(),
-                    //           confirmPassword: confirmPasswordController.text.trim()));
-                    // }
+                    if (formKey.currentState!.validate()) {
+                      context.read<AuthBloc>().add(
+                          AuthSignUp(
+                              email: emailController.text.trim(),
+                              password: passwordController.text.trim(),
+                              name: nameController.text.trim(),
+                              confirmPassword: confirmPasswordController.text.trim()));
+                    }
                   },
                   child: const Text('Sign Up'),
                 ),
