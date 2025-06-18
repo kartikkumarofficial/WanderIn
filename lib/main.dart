@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:wanderin/constants.dart';
 import 'package:wanderin/data/datasources/auth_remote_data_source.dart';
@@ -26,13 +27,7 @@ void main() async {
       providers: [
         BlocProvider(
           create:
-              (_) => AuthBloc(
-                userSignUp: UserSignUp(
-                  AuthRepositoryImplementation(
-                    AuthRemoteDataSourceImpl(Supabase.instance.client),
-                  ),
-                ),
-              ),
+              (_) => AuthBloc()
         ),
       ],
       child: MyApp(),
@@ -52,7 +47,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AirBnB',
       theme: ThemeData(

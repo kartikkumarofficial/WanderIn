@@ -7,29 +7,27 @@ part 'auth_event.dart';
 
 part 'auth_state.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final UserSignUp _userSignUp; // creating pvt variable here so its not accessible
-  AuthBloc({ // doing this way coz of named arguements
-    required UserSignUp userSignUp,
-  }) : _userSignUp=userSignUp,
-  //
-        super(AuthInitial()) {
-    on<AuthSignUp>(_onAuthSignUp);
-
+class AuthBloc extends Bloc<AuthEvent,AuthState>{
+  AuthBloc(): super(AuthInitial()){
+    on<AuthSignUp>(_onSignUp);
   }
-  Future<void> _onAuthSignUp(AuthSignUp event,Emitter<AuthState> emit )async  {
+
+
+  Future<void> _onSignUp(AuthSignUp event , Emitter<AuthState> emit)
+  async{
     emit(AuthLoading());
-
-    final res = await _userSignUp(
-      UserSignUpParameters(
-          email:event.email,
-          password: event.password,
-          name: event.name,
-          confirmPassword: event.confirmPassword),);
-
-    res.fold(
-            (failure)=>emit(AuthFailure(failure.message)) ,
-            (uid)=> emit(AuthSuccess(uid)),);
+    try{
+      if(event.password!=event.confirmPassword){
+        emit(AuthFailure("Passwords do not match"));
+      }else if(event.password.length<6){
+        emit(AuthFailure("Password too short"));
+      }else{
+        //todo call signup logic from usecase
+        emit(AuthSuccess("Sign up successful"));
+      }
+    }catch(e){
+      emit(AuthFailure("Something went wrong"));
+    }
 
   }
 

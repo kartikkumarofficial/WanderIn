@@ -36,7 +36,22 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(backgroundColor: Colors.black),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Form(
+        child: BlocListener<AuthBloc, AuthBloc>(
+
+  listener: (context, state) {
+    if (state is AuthLoading) {
+      Get.snackbar("Loading", "Signing up...");
+    } else if (state is AuthSuccess) {
+      Get.snackbar("Success", state.message);
+     Navigator.of(context).pushReplacementNamed('/main');
+
+    } else if (state is AuthFailure) {
+      Get.snackbar("Error", state.error, backgroundColor: Colors.red);
+    }
+
+
+  },
+  child: Form(
           key: formKey,
           child: Column(
             children: [
@@ -72,13 +87,13 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                   ),
                   onPressed: () {
-                    if (formKey.currentState!.validate()) {
-                      context.read<AuthBloc>().add(
-                          AuthSignUp(
-                              email: emailController.text.trim(),
-                              password: passwordController.text.trim(),
-                              name: nameController.text.trim(),
-                              confirmPassword: confirmPasswordController.text.trim()));
+                    // if (formKey.currentState!.validate()) {
+                    //   context.read<AuthBloc>().add(
+                    //       AuthSignUp(
+                    //           email: emailController.text.trim(),
+                    //           password: passwordController.text.trim(),
+                    //           name: nameController.text.trim(),
+                    //           confirmPassword: confirmPasswordController.text.trim()));
                     }
                   },
                   child: const Text('Sign Up'),
@@ -87,6 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
         ),
+),
       ),
     );
   }

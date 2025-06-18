@@ -17,7 +17,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case '/auth':
         return MaterialPageRoute(builder: (_) => LoginPage());
-      case '/second':
+      case '/main':
         return MaterialPageRoute(builder: (_) => MainScaffold());
       case '/third':
         return MaterialPageRoute(builder: (_) => ServiceScreen());
